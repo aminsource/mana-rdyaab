@@ -58,7 +58,7 @@ import { removeTrailingSlash } from '../lib/url';
   const collect = (type, params, uuid) => {
     if (disableTracking) return;
 
-    const key = 'umami.cache';
+    const key = 'sunaTracker.cache';
 
     const payload = {
       website: uuid,
@@ -108,9 +108,9 @@ import { removeTrailingSlash } from '../lib/url';
   /* Handle events */
 
   const addEvents = () => {
-    document.querySelectorAll("[class*='umami--']").forEach(element => {
+    document.querySelectorAll("[class*='sunaTracker--']").forEach(element => {
       element.className.split(' ').forEach(className => {
-        if (/^umami--([a-z]+)--([\w]+[\w-]*)$/.test(className)) {
+        if (/^sunaTracker--([a-z]+)--([\w]+[\w-]*)$/.test(className)) {
           const [, type, value] = className.split('--');
           const listener = () => trackEvent(value, type);
 
@@ -150,12 +150,12 @@ import { removeTrailingSlash } from '../lib/url';
 
   /* Global */
 
-  if (!window.umami) {
-    const umami = event_value => trackEvent(event_value);
-    umami.trackView = trackView;
-    umami.trackEvent = trackEvent;
+  if (!window.sunaTracker) {
+    const sunaTracker = event_value => trackEvent(event_value);
+    sunaTracker.trackView = trackView;
+    sunaTracker.trackEvent = trackEvent;
 
-    window.umami = umami;
+    window.sunaTracker = sunaTracker;
   }
 
   /* Start */
