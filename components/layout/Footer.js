@@ -18,7 +18,7 @@ export default function Footer() {
             values={{
               name: (
                 <Link href="https://umami.is">
-                  <b>umami</b>
+                  <b>پرداخت الکترونیک پاسارگاد (واحد توسعه نرم افزار)</b>
                 </Link>
               ),
             }}

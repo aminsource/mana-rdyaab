@@ -7,7 +7,7 @@ export default function Layout({ title, children, header = true, footer = true }
   return (
     <>
       <Head>
-        <title>umami{title && ` - ${title}`}</title>
+        <title>ردیاب{title && ` - ${title}`}</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
